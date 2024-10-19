@@ -53,8 +53,17 @@ def start_game():
 
     if check_win():
         print('выиграл '+check_win())
+        restart()
     if step==10:
         print('ничья')
+        restart()
+
+
+def restart():
+    if int(input('хотите начать новую игру? 1 - да 0 - нет')):
+        global board
+        board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        start_game()
 
 
 start_game()
