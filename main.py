@@ -27,3 +27,26 @@ def check_win():
         if (board[pos[0]]==board[pos[1]] and board[pos[1]]==board[pos[2]]):
             win=board[pos[0]]
     return win
+
+def start_game():
+    current_player='X'
+    step=1
+    draw_board()
+
+    while (step<10) and (check_win()==False):
+        index=input('ходит игрок '+current_player+': ')
+
+        if (index=='O'):
+            break
+
+        if (game_step(int(index), current_player)):
+            print('удачный ход')
+            if(current_player=='X'):
+                current_player='O'
+            else:
+                current_player='X'
+
+            draw_board()
+            step += 1
+        else:
+            print('неверный ход, повторите')
