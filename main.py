@@ -50,3 +50,11 @@ def start_game():
             step += 1
         else:
             print('неверный ход, повторите')
+
+    if check_win():
+        print('выиграл '+check_win())
+    if step==10:
+        print('ничья')
+
+
+start_game()
