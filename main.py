@@ -14,3 +14,16 @@ def game_step(index, char):
 
     board[index-1]=char
     return True
+
+
+def check_win():
+    win=False
+    win_comb=(
+        (0,1,2),(3,4,5),(6,7,8),
+        (0,3,6),(1,4,7),(2,5,8),
+        (0,4,8),(2,4,6),
+    )
+    for pos in win_comb:
+        if (board[pos[0]]==board[pos[1]] and board[pos[1]]==board[pos[2]]):
+            win=board[pos[0]]
+    return win
